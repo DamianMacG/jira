@@ -2,6 +2,7 @@ package com.example.jira.service;
 
 import com.example.jira.model.JiraTicketA;
 import com.example.jira.model.JiraTicketB;
+import com.example.jira.repository.JiraRepository;
 import com.example.jira.util.JsonFileLoader;
 import org.springframework.stereotype.Service;
 import java.io.IOException;
@@ -11,17 +12,15 @@ import java.util.*;
 @Service
 public class JiraService {
 
-    public List<JiraTicketA> getJiraTicketsA() throws IOException {
-        return JsonFileLoader.loadJiraTicketsA();
-    }
+    private final JiraRepository jiraRepository;
 
-    public List<JiraTicketB> getJiraTicketsB() throws IOException {
-        return JsonFileLoader.loadJiraTicketsB();
+    public JiraService(JiraRepository jiraRepository) {
+        this.jiraRepository = jiraRepository;
     }
 
     public List<Map<String, Object>> getCombinedTickets() throws IOException {
-        List<JiraTicketA> ticketsA = getJiraTicketsA();
-        List<JiraTicketB> ticketsB = getJiraTicketsB();
+        List<JiraTicketA> ticketsA = jiraRepository.fetchJiraTicketsA();
+        List<JiraTicketB> ticketsB = jiraRepository.fetchJiraTicketsB();
 
         Map<String, Map<String, Object>> combinedMap = new HashMap<>();
 
