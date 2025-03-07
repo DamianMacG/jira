@@ -1,0 +1,32 @@
+[
+  {
+    "id": "A-101",
+    "epicName": "Epic Feature A",
+    "arpm": "High",
+    "readinessStatus": "Ready",
+    "t1": "Task A1",
+    "t2": "Task A2",
+    "t3": "Task A3",
+    "lastUpdated": "2025-03-07T12:00:00"
+  },
+  {
+    "id": "A-102",
+    "epicName": "Epic Feature B",
+    "arpm": "Medium",
+    "readinessStatus": "In Progress",
+    "t1": "Task B1",
+    "t2": "Task B2",
+    "t3": "Task B3",
+    "lastUpdated": "2025-03-06T15:30:00"
+  },
+  {
+    "id": "A-103",
+    "epicName": "Epic Feature C",
+    "arpm": "Low",
+    "readinessStatus": "Not Started",
+    "t1": "Task C1",
+    "t2": "Task C2",
+    "t3": "Task C3",
+    "lastUpdated": "2025-03-05T10:45:00"
+  }
+]
